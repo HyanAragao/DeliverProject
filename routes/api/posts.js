@@ -4,6 +4,10 @@ const router = express.Router();
 // posts Model
 const Posts = require('../../models/Posts');
 
+router.post('/', (req, res) => {
+    res.send(`tá aqui`);
+})
+
 //routes GET api/posts
 // GET all posts
 router.get('/', async (req, res) => {

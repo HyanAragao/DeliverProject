@@ -1,11 +1,20 @@
+var cors = require('cors')
 const express = require('express')
 const mongoose = require('mongoose');
 const { MONGO_URI } = require('./config');
 
+const app = express();
+app.use(cors());
+
+app.get('/', (req, res) => {
+    res.send('Hellllloooo')
+});
+
 // Routes
 const postsRoutes = require('./routes/api/posts');
 
-const app = express();
+// User routes
+app.use('/api/posts', postsRoutes);
 
 // BodyParser Middleware
 app.use(express.json());
@@ -17,9 +26,6 @@ mongoose.connect(MONGO_URI, {
 })
 .then(() => console.log('MongoDB connected!'))
 .catch(err => console.log(err));
-
-// User routes
-app.use('/api/posts', postsRoutes);
 
 const PORT = process.env.PORT || 5000;
 
