@@ -24,8 +24,6 @@ const renderFleets = (fleets) => {
                     <h4 class="card-text"> Ship Fuel Level: ${post.shipFuelLevel}</h4>
                     <h4 class="card-text"> Ship Fuel Capacity: ${post.shipFuelCapacity}</h4>
                     <h4 class="card-text"> Ship Weight Capacity: ${post.shipWeightCapacity}</h4>
-                    <a href="#" class="card-link id="edit-post">Edit</a>
-                    <a href="#" class="card-link id="delete-post">Delete</a>
                 </div>
                 </div>
                 </div>
@@ -63,17 +61,6 @@ addPostForm.addEventListener('submit', (e) => {
             dataArr.push(data);
             renderFleets(dataArr);
         })
+    
     location.reload();
 });
-
-//postsList.addEventListener('click', (e) => {
-//  e.preventDefault();
-//  let delButtonisPressed = e.target.id == 'delete-post';
-//  let editButtonisPressed = e.target.id == 'edit-post';
-//
-//  if(delButtonisPressed) {
-//      fetch(`${urlFleet}/${id}`)
-//      .then(res => res.json())
-//      .then(() => location.reload())
-//  }
-//})
