@@ -8,37 +8,49 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <title>Federation Fleet</title>
 </head>
-<body>
+<body> 
     <div class="container">
         <div class="row mt-3">
             <div class="col-md-6">
+                
                 <h3>Add new Pilots and Ships here</h3>
                 <form class="add-post-form">
                 <div class="form-group">
-                    <label for="title">Title</label>
-                    <input type="text" class="form-control" id="title-value">
+                    <label for="title">Pilot Certification</label>
+                    <input type="text" class="form-control" id="certification-value">
+                    <label for="title">Pilot Age</label>
+                    <input type="number" class="form-control" id="age-value">
+                    <label for="title">Pilot Credits</label>
+                    <input type="number" class="form-control" id="credits-value">
+                    <label for="title">Pilot Location</label>
+                    <input type="text" class="form-control" id="location-value">
+                    <label for="title">Ship Fuel Level</label>
+                    <input type="number" class="form-control" id="fuellevel-value">
+                    <label for="title">Ship Fuel Capacity: </label>
+                    <input type="number" class="form-control" id="fuelcapacity-value">
+                    <label for="title">Ship Weight Capacity</label>
+                    <input type="number" class="form-control" id="weightcapacity-value">
                 </div>
-                <div class="form-group">
-                    <label for="body">Content</label>
-                    <textarea class="form-control" id="body-value"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Add Pilot Certification</button>
+                <button style="margin-top: 10px;" type="submit" class="btn btn-primary">Add</button>
                 </form>
             </div>
+            <div class="posts-list row">
+                <div class="card mt-4 col-md-6 bg-ligt">
+                <div style="width: 80%"class="card-body">
+                    <h4 class="card-subtitle mb-2 text-muted">${post.pilotCertification}</h4>
+                    <p class="card-text">${post.pilotAge}</p>
+                    <p class="card-text">${post.pilotCredits}</p>
+                    <p class="card-text">${post.pilotLocation}</p>
+                    <h5 class="card-subtitle mb-2 text-muted">${post.shipFuelLevel}</h5>
+                    <p class="card-text">${post.shipFuelCapacity}</p>
+                    <p class="card-text">${post.shipWeightCapacity}</p>
+                    <a href="#" class="card-link">Edit</a>
+                    <a href="#" class="card-link">Delete</a>
+                </div>
+                </div>
+                </div>
         </div>
     </div>
-    <div class="posts-list row">
-        <div class="card mt-4 col-md-6 bg-ligt">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-            <p class="card-text">Some quick example text to build on the <em>card title</em> and make up the bulk of the card's content.</p>
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
-        </div>
-        </div>
-    </div>
-
     <script src="./main.js"></script>
 </body>
 </html>
