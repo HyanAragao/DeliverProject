@@ -16,16 +16,16 @@ const renderFleets = (fleets) => {
         output += `
         <div class="posts-list row">
                 <div class="card mt-4 col-md-6 bg-ligt">
-                <div class="card-body">
-                    <h4 class="card-subtitle mb-2 text-muted">${post.pilotCertification}</h4>
-                    <p class="card-text">${post.pilotAge}</p>
-                    <p class="card-text">${post.pilotCredits}</p>
-                    <p class="card-text">${post.pilotLocation}</p>
-                    <h5 class="card-subtitle mb-2 text-muted">${post.shipFuelLevel}</h5>
-                    <p class="card-text">${post.shipFuelCapacity}</p>
-                    <p class="card-text">${post.shipWeightCapacity}</p>
-                    <a href="#" class="card-link">Edit</a>
-                    <a href="#" class="card-link">Delete</a>
+                <div class="card-body" data-id=${post._id}>
+                    <h2 class="card-subtitle mb-2 text-muted"> Pilot Certification: ${post.pilotCertification} </h2>
+                    <h4 class="card-text"> Pilot Age: ${post.pilotAge}</h4>
+                    <h4 class="card-text"> Pilot Credits: ${post.pilotCredits}</h4>
+                    <h4 class="card-text"> Pilot Location: ${post.pilotLocation}</h4>
+                    <h4 class="card-text"> Ship Fuel Level: ${post.shipFuelLevel}</h4>
+                    <h4 class="card-text"> Ship Fuel Capacity: ${post.shipFuelCapacity}</h4>
+                    <h4 class="card-text"> Ship Weight Capacity: ${post.shipWeightCapacity}</h4>
+                    <a href="#" class="card-link id="edit-post">Edit</a>
+                    <a href="#" class="card-link id="delete-post">Delete</a>
                 </div>
                 </div>
                 </div>
@@ -35,14 +35,10 @@ const renderFleets = (fleets) => {
     
 }
 
-// Get - Read the posts
-// Method: GET
 fetch(urlFleet)
     .then(res => res.json())
     .then(data => renderFleets(data))
 
-// Create - Insert new post
-// Method: POST
 addPostForm.addEventListener('submit', (e) => {
     e.preventDefault();
     fetch(urlFleet, {
@@ -69,3 +65,15 @@ addPostForm.addEventListener('submit', (e) => {
         })
     location.reload();
 });
+
+//postsList.addEventListener('click', (e) => {
+//  e.preventDefault();
+//  let delButtonisPressed = e.target.id == 'delete-post';
+//  let editButtonisPressed = e.target.id == 'edit-post';
+//
+//  if(delButtonisPressed) {
+//      fetch(`${urlFleet}/${id}`)
+//      .then(res => res.json())
+//      .then(() => location.reload())
+//  }
+//})

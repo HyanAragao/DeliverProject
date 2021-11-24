@@ -12,7 +12,6 @@
     <div class="container">
         <div class="row mt-3">
             <div class="col-md-6">
-                
                 <h3>Add new Pilots and Ships here</h3>
                 <form class="add-post-form">
                 <div class="form-group">
@@ -36,14 +35,14 @@
             </div>
             <div class="posts-list row">
                 <div class="card mt-4 col-md-6 bg-ligt">
-                <div style="width: 80%"class="card-body">
-                    <h4 class="card-subtitle mb-2 text-muted">${post.pilotCertification}</h4>
-                    <p class="card-text">${post.pilotAge}</p>
-                    <p class="card-text">${post.pilotCredits}</p>
-                    <p class="card-text">${post.pilotLocation}</p>
-                    <h5 class="card-subtitle mb-2 text-muted">${post.shipFuelLevel}</h5>
-                    <p class="card-text">${post.shipFuelCapacity}</p>
-                    <p class="card-text">${post.shipWeightCapacity}</p>
+                <div class="card-body">
+                    <h2 class="card-subtitle mb-2 text-muted"> Pilot Certification: ${post.pilotCertification} </h2>
+                    <h4 class="card-text"> Pilot Age: ${post.pilotAge}</h4>
+                    <h4 class="card-text"> Pilot Credits: ${post.pilotCredits}</h4>
+                    <h4 class="card-text"> Pilot Location: ${post.pilotLocation}</h4>
+                    <h4 class="card-text"> Ship Fuel Level: ${post.shipFuelLevel}</h4>
+                    <h4 class="card-text"> Ship Fuel Capacity: ${post.shipFuelCapacity}</h4>
+                    <h4 class="card-text"> Ship Weight Capacity: ${post.shipWeightCapacity}</h4>
                     <a href="#" class="card-link">Edit</a>
                     <a href="#" class="card-link">Delete</a>
                 </div>
